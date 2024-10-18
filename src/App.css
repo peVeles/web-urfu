@@ -1,0 +1,46 @@
+.wrapper {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.counterWrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.todoWrapper {
+    width: 400px;
+    height: 100%;
+    gap: 0.25em;
+}
+
+.todoListWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+}
+
+.todoItem {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+}
+
+.todoCreateVacationWrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.idInputWrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 1em;
+}
