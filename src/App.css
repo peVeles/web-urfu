@@ -20,6 +20,10 @@
     gap: 0.25em;
 }
 
+.todoInput {
+    width: 100%;
+}
+
 .todoListWrapper {
     display: flex;
     flex-direction: column;
