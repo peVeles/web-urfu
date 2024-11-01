@@ -7,12 +7,13 @@ import FilterSearchResults from './pages/LearnHooks/UseMemo/FilterSearchResults'
 import CssModules from './pages/CssModules'
 
 function App() {
+  return <RemovableTodosPage />
+
   return <CssModules />
   return <FilterSearchResults />
 
   return <ApiCallDependingOnState />
   return <ApiCallPage />
-  return <RemovableTodosPage />
   return <CounterPage />
 }
 

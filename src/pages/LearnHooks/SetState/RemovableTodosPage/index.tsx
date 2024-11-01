@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import CreateTodoButton from '../../../Memo/RemovableTodoWithMemo/components/CreateTodoButton'
 
 interface ITodoItem {
   id: number
@@ -17,8 +18,8 @@ const RemovableTodosPage = () => {
     setTodoList((prev) => prev.filter((it) => it.id !== id))
   }
 
-  const handleCreateVacation = () => {
-    setTodoList((prev) => [...prev, { id: prev[prev.length - 1].id + 1, text: 'Улететь в отпуск' }])
+  const handleTodoCreated = (newTodoText: string) => {
+    setTodoList((prev) => [...prev, { id: prev[prev.length - 1].id + 1, text: newTodoText }])
   }
 
   const renderTodo = (item: ITodoItem, _: number) => {
@@ -36,7 +37,7 @@ const RemovableTodosPage = () => {
         <h2 style={{ textAlign: 'center' }}>Мой Todo list:</h2>
         <ul className="todoListWrapper">{todoList.map(renderTodo)}</ul>
         <div className="todoCreateVacationWrapper">
-          <button onClick={handleCreateVacation}>+ Отпуск</button>
+          <CreateTodoButton onTodoItemCreated={handleTodoCreated} />
         </div>
       </div>
     </div>

@@ -54,4 +54,49 @@ const TodoItem = memo((props: ITodoItemProps) => {
   )
 })
 
+const OrderActionsMenu = () => {
+  const [isActionsMenuOpen, setIsActionsMenuOpen] = useState(false)
+
+  const renderMenu = () => {
+    if (!isActionsMenuOpen) return null
+
+    return (
+      <div style={{ position: 'absolute', right: 0, top: '45px' }}>
+        <CancelOrderListItem />
+      </div>
+    )
+  }
+
+  return (
+    <div style={{ transform: 'translateX(-10%)' }}>
+      <div style={{ position: 'relative' }}>
+        <button onClick={() => setIsActionsMenuOpen((prev) => !prev)}>...</button>
+        {renderMenu()}
+      </div>
+    </div>
+  )
+}
+
+const CancelOrderListItem = () => {
+  const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false)
+
+  const handleCancel = () => {
+    // API call
+  }
+
+  return (
+    <div>
+      {isConfirmModalOpen && (
+        <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 10000 }}>
+          <p>Точно отменить?</p>
+          <button onClick={handleCancel}>Да!</button>
+        </div>
+      )}
+      <span className="list-item" onClick={() => setIsConfirmModalOpen(true)}>
+        Отменить
+      </span>
+    </div>
+  )
+}
+
 export default RemovableTodoWithMemoPage
